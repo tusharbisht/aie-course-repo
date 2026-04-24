@@ -18,6 +18,7 @@ class TicketRepository:
         t = Ticket(title=data.title, status=data.status, assignee=data.assignee)
         self.s.add(t)
         await self.s.flush()
+        await self.s.commit()  # e2e-test fix — M1 bug resolved
         return t
 
     async def list_all(self) -> list[Ticket]:
