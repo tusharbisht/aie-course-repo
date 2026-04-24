@@ -30,3 +30,4 @@ the dashboard — our backend parses the workflow's conclusion.
 - FastAPI
 - SQLite + SQLAlchemy
 - pytest
+# e2e test
