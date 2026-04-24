@@ -1,29 +1,4 @@
-"""Module-1 FAILING TEST: the create endpoint doesn't commit the
-transaction. Learner's job (assisted by Claude) is to diagnose +
-fix. This test asserts persistence across requests — the unfixed
-version fails because without commit the write doesn't survive
-session boundary.
-"""
-import pytest
-import pytest_asyncio
-from httpx import AsyncClient, ASGITransport
-
-from app.main import app
-
-
-@pytest_asyncio.fixture
-async def client():
-    async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as c:
-        yield c
-
-
-@pytest.mark.asyncio
-async def test_ticket_create_persists(client: AsyncClient) -> None:
-    r = await client.post("/tickets", json={"title": "flaky login", "status": "open"})
-    assert r.status_code == 201
-    ticket_id = r.json()["id"]
-
-    # Separate request — tests cross-session persistence (the bug)
-    r2 = await client.get(f"/tickets/{ticket_id}")
-    assert r2.status_code == 200  # ← FAILS before fix (404)
-    assert r2.json()["title"] == "flaky login"
+"""e2e-test branch only — trivial passing test to verify GHA grader succeeds.
+The real M1 failing test lives on the main/module-1-starter branches."""
+def test_smoke():
+    assert 2 + 2 == 4
