@@ -1,0 +1,3 @@
+# Module 5 task: author `test-fix-loop.md` here.
+# A custom subagent scoped to: read failing pytest output, edit ONE file at a time, re-run tests.
+# YAML frontmatter: name, description, tools (allowlist: Read, Edit, Bash for `pytest -q`).

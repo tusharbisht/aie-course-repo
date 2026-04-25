@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 # module-5-team
 
 ## What this module teaches
 
 M5 Team Claude Code: write .claude/agents/test-fixer.md subagent, PreToolUse hook blocking dangerous commands, settings.json scoping permissions. Teammate-ready config.
+=======
+# module-4-mcp
+
+## What this module teaches
+
+M4 Ship w/ MCP + Review AI PR: consume the team-tickets MCP (https://github.com/tusharbisht/aie-team-tickets-mcp) — wire via `claude mcp add` + settings.json. Ship a small feature that calls the MCP. PR graded via GitHub Actions.
+>>>>>>> module-4-mcp
 
 ## Task
 

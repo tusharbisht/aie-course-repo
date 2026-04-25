@@ -1,0 +1,18 @@
+{
+  "_comment": "MODULE 5 — replace this with your real settings.json. Three hooks below.",
+  "hooks": {
+    "PreToolUse": [
+      { "matcher": "Edit", "_hint": "Block edits to alembic/versions/* or .env. Exit 2 with a message." }
+    ],
+    "PostToolUse": [
+      { "matcher": "Edit", "_hint": "After every Edit on app/*.py, run `ruff format <path>`. Exit 0." }
+    ],
+    "Stop": [
+      { "_hint": "Before exiting, run `pytest -q` and surface any failures into the next prompt." }
+    ]
+  },
+  "permissions": {
+    "allow": ["Read", "Edit", "Bash(pytest:*)", "Bash(ruff:*)", "Bash(curl:*)"],
+    "deny": ["Bash(rm:*)", "Bash(git push:*)", "Edit(.env)"]
+  }
+}
