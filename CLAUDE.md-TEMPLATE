@@ -1,0 +1,31 @@
+# CLAUDE.md — TEMPLATE FOR YOU TO AUTHOR
+
+Author this file in M2.S3. Rename to `CLAUDE.md` when done. Six required sections:
+
+## Stack
+<!-- Python 3.11+, FastAPI 0.115, SQLAlchemy 2.0 (select() — never query()), aiosqlite, pytest 8 + pytest-asyncio (asyncio_mode=auto), pydantic 2 — Pydantic v2 syntax (model_validate, not .from_orm). -->
+
+## Conventions
+<!-- snake_case modules + functions, PascalCase classes, mandatory `from __future__ import annotations`, type hints required, async-first, constructor injection (no global state), httpx.AsyncClient for HTTP. -->
+
+## Testing
+<!-- pytest 8 + pytest-asyncio. NEVER unittest.TestCase. Mocks: pytest-mock + AsyncMock for async paths. Fixtures in conftest.py. Coverage target ≥85%. -->
+
+## Don't-Touch
+<!-- - .env / application-prod.* config
+     - alembic/versions/*.py — never modify in place; ADD a new revision
+     - app/db.py engine / session config without explicit approval
+     - tests/conftest.py fixture order (it's a smell of test pollution) -->
+
+## Commands
+<!-- Run tests:    pytest -v
+     Lint:         ruff check app/
+     Type-check:   mypy app/
+     Run local:    uvicorn app.main:app --reload -->
+
+## Escalation
+<!-- When should Claude STOP and ask a human?
+     - Schema changes (new alembic revision, altered column type)
+     - Any change to authentication / authorization
+     - New dependency in requirements.txt
+     - Removing a test without replacing it -->
