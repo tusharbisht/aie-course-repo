@@ -1,8 +1,24 @@
+<<<<<<< HEAD
 # module-6-agent-harness
 
 ## What this module teaches
 
 M6 Agentic Coding from First Principles: build an autocorrect loop using the Anthropic SDK's tool_use, add budget + sha256 progress detection, optimize the test harness. GHA runs your harness on 3 bugs.
+=======
+<<<<<<< HEAD
+# module-5-team
+
+## What this module teaches
+
+M5 Team Claude Code: write .claude/agents/test-fixer.md subagent, PreToolUse hook blocking dangerous commands, settings.json scoping permissions. Teammate-ready config.
+=======
+# module-4-mcp
+
+## What this module teaches
+
+M4 Ship w/ MCP + Review AI PR: consume the team-tickets MCP (https://github.com/tusharbisht/aie-team-tickets-mcp) — wire via `claude mcp add` + settings.json. Ship a small feature that calls the MCP. PR graded via GitHub Actions.
+>>>>>>> module-4-mcp
+>>>>>>> module-5-team
 
 ## Task
 
